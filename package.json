@@ -1,0 +1,33 @@
+{
+  "name": "devcafe_mean_blog",
+  "version": "1.0.0",
+  "description": "infonova devcafe 01.12.2014 mean stack intro - blog",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.9.3",
+    "express": "^4.10.4",
+    "mongoose": "^3.8.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjurisic/infonova_devcafe_mean_blog"
+  },
+  "keywords": [
+    "mean",
+    "mongodb",
+    "angular",
+    "express",
+    "nodejs"
+  ],
+  "author": "marko jurisic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mjurisic/infonova_devcafe_mean_blog/issues"
+  },
+  "homepage": "https://github.com/mjurisic/infonova_devcafe_mean_blog"
+}

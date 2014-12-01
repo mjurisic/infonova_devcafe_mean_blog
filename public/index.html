@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blog</title>
+    <meta charset="UTF-8">
+    <meta name=description content="">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body ng-app="Blog" ng-controller="PostController">
+<div class="container"><h1 class="text-center">MEAN Stack code cafe</h1>
+
+
+    <div class="panel">
+        <form ng-submit="savePost()" role="form">
+            <legend>New post</legend>
+
+            <div class="form-group">
+                <label for="title"></label>
+                <input type="text" class="form-control" name="" id="title" placeholder="Input Title" ng-model="newpost.title">
+            </div>
+
+            <div class="form-group">
+                <label for="text"></label>
+                <textarea type="text" class="form-control" name="" id="text" placeholder="Input text" ng-model="newpost.text"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="tags"></label>
+                <input type="text" class="form-control" name="" id="tags" placeholder="Input tags, comma separated" ng-model="newpost.tags">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div class="panel">
+        <label for="filter">Filter:</label>
+        <input type="text" name="name" id="filter" class="form-control" value="" ng-model="postfilter">
+    </div>
+    <div class="panel panel-default" ng-repeat="post in posts | filter:postfilter">
+        <div class="panel-heading" ng-click="showPost(post)">
+            {{post.title}}
+        </div>
+        <div class="panel-body" ng-show="post.show">
+            {{post.text}}
+            <span class="pull-right">{{post.modified | date}}</span>
+
+            <div class="panel" ng-show="post.tags.length > 0">
+                <hr>
+                Tags:
+                <span ng-repeat="tag in post.tags">{{tag}}</span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
