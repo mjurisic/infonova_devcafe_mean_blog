@@ -5,5 +5,4 @@ Prerequisites:
     - mongo installed and running on default port
 
 To run:
-npm install
-npm start
+npm install && npm start
